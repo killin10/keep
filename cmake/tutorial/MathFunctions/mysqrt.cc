@@ -1,4 +1,5 @@
 #include "MathFunctions.h"
+#include "Table.h"
 
 #include <stdio.h>
 #include <math.h>

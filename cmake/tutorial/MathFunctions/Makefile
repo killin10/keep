@@ -80,6 +80,16 @@ install/fast: preinstall/fast
 	/usr/local/Cellar/cmake/3.9.1/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -124,16 +134,6 @@ test:
 test/fast: test
 
 .PHONY : test/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -182,6 +182,48 @@ MathFunctions/fast:
 	cd /Users/sw/workspace/github/cppyard/cmake/tutorial && $(MAKE) -f MathFunctions/CMakeFiles/MathFunctions.dir/build.make MathFunctions/CMakeFiles/MathFunctions.dir/build
 .PHONY : MathFunctions/fast
 
+# Convenience name for target.
+MathFunctions/CMakeFiles/MakeTable.dir/rule:
+	cd /Users/sw/workspace/github/cppyard/cmake/tutorial && $(MAKE) -f CMakeFiles/Makefile2 MathFunctions/CMakeFiles/MakeTable.dir/rule
+.PHONY : MathFunctions/CMakeFiles/MakeTable.dir/rule
+
+# Convenience name for target.
+MakeTable: MathFunctions/CMakeFiles/MakeTable.dir/rule
+
+.PHONY : MakeTable
+
+# fast build rule for target.
+MakeTable/fast:
+	cd /Users/sw/workspace/github/cppyard/cmake/tutorial && $(MAKE) -f MathFunctions/CMakeFiles/MakeTable.dir/build.make MathFunctions/CMakeFiles/MakeTable.dir/build
+.PHONY : MakeTable/fast
+
+MakeTable.o: MakeTable.cc.o
+
+.PHONY : MakeTable.o
+
+# target to build an object file
+MakeTable.cc.o:
+	cd /Users/sw/workspace/github/cppyard/cmake/tutorial && $(MAKE) -f MathFunctions/CMakeFiles/MakeTable.dir/build.make MathFunctions/CMakeFiles/MakeTable.dir/MakeTable.cc.o
+.PHONY : MakeTable.cc.o
+
+MakeTable.i: MakeTable.cc.i
+
+.PHONY : MakeTable.i
+
+# target to preprocess a source file
+MakeTable.cc.i:
+	cd /Users/sw/workspace/github/cppyard/cmake/tutorial && $(MAKE) -f MathFunctions/CMakeFiles/MakeTable.dir/build.make MathFunctions/CMakeFiles/MakeTable.dir/MakeTable.cc.i
+.PHONY : MakeTable.cc.i
+
+MakeTable.s: MakeTable.cc.s
+
+.PHONY : MakeTable.s
+
+# target to generate assembly for a file
+MakeTable.cc.s:
+	cd /Users/sw/workspace/github/cppyard/cmake/tutorial && $(MAKE) -f MathFunctions/CMakeFiles/MakeTable.dir/build.make MathFunctions/CMakeFiles/MakeTable.dir/MakeTable.cc.s
+.PHONY : MakeTable.cc.s
+
 mysqrt.o: mysqrt.cc.o
 
 .PHONY : mysqrt.o
@@ -217,12 +259,16 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... install"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... MathFunctions"
 	@echo "... install/local"
 	@echo "... test"
-	@echo "... list_install_components"
-	@echo "... MathFunctions"
+	@echo "... MakeTable"
+	@echo "... MakeTable.o"
+	@echo "... MakeTable.i"
+	@echo "... MakeTable.s"
 	@echo "... mysqrt.o"
 	@echo "... mysqrt.i"
 	@echo "... mysqrt.s"
