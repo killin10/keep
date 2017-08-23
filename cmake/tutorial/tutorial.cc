@@ -18,6 +18,14 @@ int main (int argc, char *argv[])
     return 1;
     }
 
+#ifdef HAVE_LOG
+  fprintf(stdout, "have log()\n");
+#endif
+
+#ifdef HAVE_EXP
+  fprintf(stdout, "have exp()\n");
+#endif
+
   double inputValue = atof(argv[1]);
 
 #ifdef USE_MYMATH
