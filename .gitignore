@@ -1,7 +1,8 @@
-CMakeFiles
+CMakeFiles/
 CMakeCache.txt
 *.cmake
 *.a
 DartConfiguration.tcl
-Testing
+Testing/
 install_manifest.txt
+_CPack_Packages/
