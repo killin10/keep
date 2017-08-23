@@ -2,3 +2,6 @@ CMakeFiles
 CMakeCache.txt
 *.cmake
 *.a
+DartConfiguration.tcl
+Testing
+install_manifest.txt
