@@ -88,3 +88,8 @@ add_custom_target(distclean
    COMMAND ${CMAKE_BUILD_TOOL} clean
    COMMAND rm -rf "${PROJECT_SOURCE_DIR}/build/*"
 )
+
+# add compilation database
+add_custom_target(cdb
+    COMMAND ln -sf "${PROJECT_BINARY_DIR}/compile_commands.json" ${PROJECT_SOURCE_DIR}
+)
