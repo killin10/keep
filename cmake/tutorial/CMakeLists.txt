@@ -83,3 +83,8 @@ set (CPACK_PACKAGE_VERSION_MAJOR "${Tutorial_VERSION_MAJOR}")
 set (CPACK_PACKAGE_VERSION_MINOR "${Tutorial_VERSION_MINOR}")
 include (CPack)
 
+# distclean
+add_custom_target(distclean
+   COMMAND ${CMAKE_BUILD_TOOL} clean
+   COMMAND rm -rf "${PROJECT_SOURCE_DIR}/build/*"
+)
