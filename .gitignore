@@ -6,3 +6,4 @@ DartConfiguration.tcl
 Testing/
 install_manifest.txt
 _CPack_Packages/
+build/

@@ -4,6 +4,9 @@ project (Tutorial)
 # The version number.
 set (Tutorial_VERSION_MAJOR 1)
 set (Tutorial_VERSION_MINOR 0)
+
+# export compilation database used by YCM
+set (CMAKE_EXPORT_COMPILE_COMMANDS ON)
  
 # does this system provide the log and exp functions?
 include (${CMAKE_ROOT}/Modules/CheckFunctionExists.cmake)
