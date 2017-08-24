@@ -8,3 +8,4 @@ install_manifest.txt
 _CPack_Packages/
 build/
 compile_commands.json
+.DS_Store
