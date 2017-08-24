@@ -7,9 +7,13 @@ set (Tutorial_VERSION_MINOR 0)
 
 # export compilation database used by YCM
 set (CMAKE_EXPORT_COMPILE_COMMANDS ON)
- 
+
 # does this system provide the log and exp functions?
-include (${CMAKE_ROOT}/Modules/CheckFunctionExists.cmake)
+include (CheckFunctionExists)
+
+if(UNIX)
+    set (CMAKE_REQUIRED_LIBRARIES "m")
+endif()
  
 check_function_exists (log HAVE_LOG)
 check_function_exists (exp HAVE_EXP)
@@ -87,6 +91,7 @@ include (CPack)
 add_custom_target(distclean
    COMMAND ${CMAKE_BUILD_TOOL} clean
    COMMAND rm -rf "${PROJECT_SOURCE_DIR}/build/*"
+   COMMAND rm -f "${PROJECT_SOURCE_DIR}/compile_commands.json"
 )
 
 # add compilation database

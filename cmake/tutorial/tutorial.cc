@@ -19,11 +19,15 @@ int main (int argc, char *argv[])
     }
 
 #ifdef HAVE_LOG
-  fprintf(stdout, "have log()\n");
+  fprintf(stdout, "have log(): %f\n", log(2));
+#else
+  fprintf(stderr, "log() not found\n");
 #endif
 
 #ifdef HAVE_EXP
-  fprintf(stdout, "have exp()\n");
+  fprintf(stdout, "have exp(): %f\n", exp(2));
+#else
+  fprintf(stderr, "exp() not found\n");
 #endif
 
   double inputValue = atof(argv[1]);
