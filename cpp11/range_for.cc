@@ -22,5 +22,17 @@ int main(void) {
 	}
 	std::cout << s << std::endl;
 
+	int arr[3][4] = {
+		{1, 2, 3, 4},
+		{21, 22, 23, 24},
+		{31, 32, 33, 34}
+	};
+	for (auto &row : arr) {
+		for (auto e : row) {
+			std::cout << e << "\t";
+		}
+		std::cout << std::endl;
+	}
+
 	return 0;
 }
