@@ -10,13 +10,6 @@ Sphinx Docs Demo
    :maxdepth: 2
    :numbered:
 
-
-
-Indices and tables
-==================
-
 * :ref:`genindex`
-* :ref:`search`
-
 
 .. doxygenindex::

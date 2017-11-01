@@ -9,3 +9,6 @@ _CPack_Packages/
 build/
 compile_commands.json
 .DS_Store
+a.out
+sphinx_docs/docs/doxy_*
+sphinx_docs/docs/sphinx_build

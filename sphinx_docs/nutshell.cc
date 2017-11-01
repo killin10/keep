@@ -1,7 +1,7 @@
 /**
  * With a little bit of a elaboration, should you feel it necessary.
  *
- * yiu see.
+ * yiu see. **This is a markdown comment.** [markdown link here](http://hh)
  *
  * @date Thu Aug 24 11:05:04 2017
  * @author Shi Wei (shiwei2012@gmail.com)
