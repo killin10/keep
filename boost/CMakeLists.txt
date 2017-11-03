@@ -28,6 +28,8 @@ include_directories ("${PROJECT_BINARY_DIR}")
  
 # add the executable
 add_executable (first_boost first_boost.cc)
+add_executable (link_demo link_demo.cc)
+target_link_libraries (link_demo boost_regex)
  
 # add the install targets
 install (TARGETS first_boost DESTINATION bin)
