@@ -42,6 +42,7 @@ add_executable (trailing_return_type_ trailing_return_type.cc)
 add_executable (type_alias_ type_alias.cc)
 add_executable (default_constructor_ default_constructor.cc)
 add_executable (delegating_constructor_ delegating_constructor.cc)
+add_executable (lambda_ lambda.cc)
  
 # add the install targets
 install (TARGETS array_begin_end_ DESTINATION bin)
