@@ -27,13 +27,14 @@ set ( CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} ${CC_CXX11_FLAGS}")
 include_directories ("${PROJECT_BINARY_DIR}")
  
 # add the executable
-add_executable (first_boost first_boost.cc)
-add_executable (link_demo link_demo.cc)
-target_link_libraries (link_demo boost_regex)
-add_executable (boost_assert boost_assert.cc)
+add_executable (first_boost_ first_boost.cc)
+add_executable (link_demo_ link_demo.cc)
+target_link_libraries (link_demo_ boost_regex)
+add_executable (boost_assert_ boost_assert.cc)
+add_executable (boost_static_assert_ boost_static_assert.cc)
  
 # add the install targets
-install (TARGETS first_boost DESTINATION bin)
+install (TARGETS first_boost_ DESTINATION bin)
 install (FILES "${PROJECT_BINARY_DIR}/boost_config.h"        
          DESTINATION include)
  
