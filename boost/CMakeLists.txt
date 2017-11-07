@@ -32,6 +32,8 @@ add_executable (link_demo_ link_demo.cc)
 target_link_libraries (link_demo_ boost_regex)
 add_executable (boost_assert_ boost_assert.cc)
 add_executable (boost_static_assert_ boost_static_assert.cc)
+add_executable (boost_test_ boost_test.cc)
+target_link_libraries (boost_test_ boost_unit_test_framework)
  
 # add the install targets
 install (TARGETS first_boost_ DESTINATION bin)
