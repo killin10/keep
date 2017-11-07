@@ -34,6 +34,8 @@ add_executable (boost_assert_ boost_assert.cc)
 add_executable (boost_static_assert_ boost_static_assert.cc)
 add_executable (boost_test_ boost_test.cc)
 target_link_libraries (boost_test_ boost_unit_test_framework)
+add_executable (stacktrace_ stacktrace.cc)
+target_link_libraries (stacktrace_ boost_stacktrace_basic)
  
 # add the install targets
 install (TARGETS first_boost_ DESTINATION bin)
