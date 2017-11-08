@@ -36,6 +36,12 @@ add_executable (boost_test_ boost_test.cc)
 target_link_libraries (boost_test_ boost_unit_test_framework)
 add_executable (stacktrace_ stacktrace.cc)
 target_link_libraries (stacktrace_ boost_stacktrace_basic)
+add_executable (coroutine2_ coroutine2.cc)
+target_link_libraries (coroutine2_ boost_coroutine boost_context-mt)
+add_executable (continuation_ continuation.cc)
+target_link_libraries (continuation_ boost_context-mt)
+add_executable (execution_context_ execution_context.cc)
+target_link_libraries (execution_context_ boost_context-mt)
  
 # add the install targets
 install (TARGETS first_boost_ DESTINATION bin)
