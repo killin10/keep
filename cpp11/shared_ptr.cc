@@ -43,8 +43,18 @@ void f2(std::shared_ptr<D> p) {
 	std::cout << "f2() " << p->i() << std::endl;
 }
 
+void f3() {
+	// use shared_ptr to mamange raw pointer
+	D *p = new D();
+	std::shared_ptr<D> sp(p);
+
+	// do biz things & p will be deleted after return
+}
+
 int main(void) {
 	f1(std::make_shared<D>(2));
+
+	f3();
 
 	std::cout << "before exit" << std::endl;
 	return 0;
