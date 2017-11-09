@@ -47,6 +47,7 @@ add_executable (bind_ bind.cc)
 add_executable (shared_ptr_ shared_ptr.cc)
 add_executable (unique_ptr_ unique_ptr.cc)
 add_executable (weak_ptr_ weak_ptr.cc)
+add_executable (delete_ctor_ delete_ctor.cc)
  
 # add the install targets
 install (TARGETS array_begin_end_ DESTINATION bin)
