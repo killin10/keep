@@ -29,6 +29,11 @@ void f2(std::unique_ptr<C> p) {
 	f1(std::move(p));
 }
 
+void f3() {
+	// for dynamic array
+	std::unique_ptr<C[]> p(new C[3]);
+}
+
 int main(void) {
 	std::unique_ptr<C> cp(new C());
 
@@ -37,4 +42,6 @@ int main(void) {
 	std::cout << "nullptr in cp? "
 		<< (cp.get() == nullptr ? "true" : "false")
 		<< std::endl;
+
+	f3();
 }
