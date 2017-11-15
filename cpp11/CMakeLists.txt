@@ -52,6 +52,7 @@ add_executable (move_ move.cc)
 add_executable (explicit_conv_ explicit_conv.cc)
 add_executable (final_ final.cc)
 add_executable (override_ override.cc)
+add_executable (derived_ctor_ derived_ctor.cc)
  
 # add the install targets
 install (TARGETS array_begin_end_ DESTINATION bin)
