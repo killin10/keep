@@ -50,6 +50,7 @@ add_executable (weak_ptr_ weak_ptr.cc)
 add_executable (delete_ctor_ delete_ctor.cc)
 add_executable (move_ move.cc)
 add_executable (explicit_conv_ explicit_conv.cc)
+add_executable (final_ final.cc)
  
 # add the install targets
 install (TARGETS array_begin_end_ DESTINATION bin)
