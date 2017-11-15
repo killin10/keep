@@ -51,6 +51,7 @@ add_executable (delete_ctor_ delete_ctor.cc)
 add_executable (move_ move.cc)
 add_executable (explicit_conv_ explicit_conv.cc)
 add_executable (final_ final.cc)
+add_executable (override_ override.cc)
  
 # add the install targets
 install (TARGETS array_begin_end_ DESTINATION bin)
