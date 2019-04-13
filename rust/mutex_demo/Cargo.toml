@@ -1,0 +1,6 @@
+[package]
+name = "mutex_demo"
+version = "0.1.0"
+authors = ["limu.sw <limu.sw@alibaba-inc.com>"]
+
+[dependencies]
