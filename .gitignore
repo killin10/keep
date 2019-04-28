@@ -13,3 +13,5 @@ a.out
 sphinx_docs/docs/doxy_*
 sphinx_docs/docs/sphinx_build
 rust/*/target/
+.vscode
+golang/vendor
