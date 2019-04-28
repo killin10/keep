@@ -1,6 +1,10 @@
 package stringutil
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func TestReverse(t *testing.T) {
 	cases := []struct {
@@ -12,8 +16,6 @@ func TestReverse(t *testing.T) {
 	}
 	for _, c := range cases {
 		got := Reverse(c.in)
-		if got != c.want {
-			t.Errorf("Reverse(%q) == %q, want %q", c.in, got, c.want)
-		}
+		assert.Equal(t, got, c.want)
 	}
 }
