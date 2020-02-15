@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/killin10/keep/golang/howto/stringutil"
+	"github.com/killin10/keep/intogo/howto/stringutil"
 )
 
 func main() {
