@@ -1,0 +1,66 @@
+/*
+ * @lc app=leetcode id=66 lang=golang
+ *
+ * [66] Plus One
+ *
+ * https://leetcode.com/problems/plus-one/description/
+ *
+ * algorithms
+ * Easy (42.11%)
+ * Likes:    1394
+ * Dislikes: 2232
+ * Total Accepted:    569.1K
+ * Total Submissions: 1.4M
+ * Testcase Example:  '[1,2,3]'
+ *
+ * Given a non-empty array of digits representing a non-negative integer, plus
+ * one to the integer.
+ * 
+ * The digits are stored such that the most significant digit is at the head of
+ * the list, and each element in the array contain a single digit.
+ * 
+ * You may assume the integer does not contain any leading zero, except the
+ * number 0 itself.
+ * 
+ * Example 1:
+ * 
+ * 
+ * Input: [1,2,3]
+ * Output: [1,2,4]
+ * Explanation: The array represents the integer 123.
+ * 
+ * 
+ * Example 2:
+ * 
+ * 
+ * Input: [4,3,2,1]
+ * Output: [4,3,2,2]
+ * Explanation: The array represents the integer 4321.
+ * 
+ */
+
+// @lc code=start
+func plusOne(digits []int) []int {
+	result := make([]int, len(digits) + 1)
+	
+	carrier := 1
+	for i := len(digits) - 1; i >= 0; i-- {
+		sum := digits[i] + carrier
+		if sum >= 10 {
+			carrier = 1
+			result[i + 1] = sum % 10
+		} else {
+			carrier = 0
+			result[i + 1] = sum
+		}
+	}
+
+	if carrier == 0 {
+		return result[1:]
+	} else {
+		result[0] = carrier
+		return result
+	}
+}
+// @lc code=end
+
