@@ -46,13 +46,7 @@ func plusOne(digits []int) []int {
 	carrier := 1
 	for i := len(digits) - 1; i >= 0; i-- {
 		sum := digits[i] + carrier
-		if sum >= 10 {
-			carrier = 1
-			result[i + 1] = sum % 10
-		} else {
-			carrier = 0
-			result[i + 1] = sum
-		}
+		result[i + 1], carrier = sum % 10, sum / 10
 	}
 
 	if carrier == 0 {
