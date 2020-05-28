@@ -56,31 +56,27 @@
 // package leetcode
 
 import (
-	"math"
 	"sort"
 )
 
 func combinationSum(candidates []int, target int) [][]int {
 	sort.Ints(candidates)
-	return doCombinationSum(candidates, target, math.MinInt32)
+	return doCombinationSum(candidates, target)
 }
 
-func doCombinationSum(candidates []int, target int, lastChoice int) [][]int {
+func doCombinationSum(candidates []int, target int) [][]int {
 	result := [][]int{}
 
-	for _, v := range candidates {
-		if v < lastChoice {
-			continue
-		}
-
+	for i, v := range candidates {
 		if v == target {
 			result = append(result, []int{v})
 		} else if v < target {
-			subResult := doCombinationSum(candidates, target-v, v)
+			subResult := doCombinationSum(candidates[i:], target-v)
 			for _, sr := range subResult {
 				result = append(result, append([]int{v}, sr...))
 			}
 		} else {
+			// v > target
 			break
 		}
 	}
