@@ -53,12 +53,20 @@
 // package leetcode
 
 func searchInsert(nums []int, target int) int {
-	for i, v := range nums {
-		if v >= target {
-			return i
+	left, right := 0, len(nums)-1
+
+	for left <= right {
+		midIndx := (left + right) / 2
+		midVal := nums[midIndx]
+
+		if target <= midVal {
+			right = midIndx - 1
+		} else {
+			left = midIndx + 1
 		}
 	}
-	return len(nums)
+
+	return left
 }
 
 // @lc code=end
