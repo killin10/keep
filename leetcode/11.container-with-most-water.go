@@ -42,14 +42,16 @@
 // package leetcode
 
 func maxArea(height []int) int {
-	volume := 0
+	volume, left, right := 0, 0, len(height)-1
 
-	for left := 0; left < len(height)-1; left++ {
-		for right := left + 1; right < len(height); right++ {
-			v := min(height[left], height[right]) * (right - left)
-			if v > volume {
-				volume = v
-			}
+	for left < right {
+		v := min(height[left], height[right]) * (right - left)
+		volume = max(volume, v)
+
+		if height[left] < height[right] {
+			left++
+		} else {
+			right--
 		}
 	}
 
@@ -61,6 +63,14 @@ func min(a int, b int) int {
 		return a
 	} else {
 		return b
+	}
+}
+
+func max(a int, b int) int {
+	if a < b {
+		return b
+	} else {
+		return a
 	}
 }
 
