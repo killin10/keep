@@ -31,14 +31,13 @@
 // package leetcode
 
 import (
-	"math"
 	"sort"
 )
 
 func threeSumClosest(nums []int, target int) int {
 	sort.Ints(nums)
 
-	closest := math.MaxInt32
+	closest := nums[0] + nums[1] + nums[2]
 	for i := 0; i < len(nums)-2; i++ {
 		if i > 0 && nums[i] == nums[i-1] {
 			continue
