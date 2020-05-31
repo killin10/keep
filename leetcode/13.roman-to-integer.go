@@ -93,26 +93,17 @@ func romanToInt(s string) int {
 	table['D'] = 500
 	table['M'] = 1000
 
-	dtable := make(map[string]int)
-	dtable["IV"] = 4
-	dtable["IX"] = 9
-	dtable["XL"] = 40
-	dtable["XC"] = 90
-	dtable["CD"] = 400
-	dtable["CM"] = 900
-
-	chars, r := []rune(s), 0
-	for i := 0; i < len(chars); {
-		c := chars[i]
-		if i != len(chars)-1 {
-			if _, ok := dtable[string([]rune{c, chars[i+1]})]; ok {
-				r += dtable[string([]rune{c, chars[i+1]})]
-				i = i + 2
-				continue
-			}
+	chars := []rune(s)
+	i := len(chars) - 1
+	r := table[chars[i]]
+	i--
+	for i >= 0 {
+		if table[chars[i]] < table[chars[i+1]] {
+			r -= table[chars[i]]
+		} else {
+			r += table[chars[i]]
 		}
-		r += table[c]
-		i++
+		i--
 	}
 
 	return r
