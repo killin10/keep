@@ -50,20 +50,17 @@
 // @lc code=start
 // package leetcode
 
-import (
-	"strconv"
-)
-
 func isPalindrome(x int) bool {
-	chars := []rune(strconv.Itoa(x))
-	for left, right := 0, len(chars) - 1; left <= right; {
-		if (chars[left] != chars[right]) {
-			return false
-		}
-		left++
-		right--
+	if x < 0 {
+		return false
 	}
-	return true
+
+	r, t := 0, x
+	for t != 0 {
+		r = r*10 + t%10
+		t = t / 10
+	}
+	return r == x
 }
 
 // @lc code=end
